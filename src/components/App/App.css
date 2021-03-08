@@ -1,0 +1,8 @@
+body {
+    height: 95vh;
+    background: linear-gradient(360deg, hsla(239, 100%, 67%, 0.9) 0%, hsla(187, 100%, 89%, 1) 100%);
+    overflow-x: hidden ;    /*  dont want any horizontal scroll */
+    color: black;
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+  }

@@ -1,0 +1,15 @@
+.results-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px 40px;
+    transition: all 1s;
+    max-height: 50vh;
+}
+
+.results-container-expanded{
+    transform: translate(0);
+}
+.results-container-contracted{
+    transform: translate(0, -10em);
+}

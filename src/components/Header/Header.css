@@ -1,0 +1,39 @@
+.head-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.head-image {
+    /* width: auto; */
+    /* transition: max-width 1s, min-width 1s; */
+    transition: all 1s;
+}
+
+.head-image-expanded {
+    min-width: 330px;
+    max-width: 350px;
+}
+
+.head-image-contracted {
+    max-width: 260px;
+    min-width: 240px;
+    transform: translate(-30em, -3em);  
+}
+
+.head-text {
+    font-family: 'RocknRoll One', sans-serif;
+    margin: 5px 0 15px 0;
+    /* transition: font-size 1s; */
+    transition: all 1s;
+}
+
+.head-text-expanded {
+    font-size: 76px;
+}
+
+.head-text-contracted {
+    font-size: 52px;
+    transform: translate(10em, -4em);
+}
