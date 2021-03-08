@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ResultsContainer from '../ResultsContainer/ResultsContainer';
 import SearchBox from '../SearchBox/SearchBox';
 import Header from './../Header/Header';
@@ -6,37 +6,24 @@ import './App.css';
 
 const name = require('@rstacruz/startup-name-generator');
 
-class App extends React.Component {
-    constructor() {
-        super();
+const App = () => {
+    const [headerText, setHeaderText] = useState('Name Zone');
+    const [headerExpanded, setHeaderExpanded] = useState(true);
+    const [suggestedNames, setSuggestedNames] = useState([]);
 
-        this.state = {
-            headerText: 'Name Zone',
-            headerExpanded: true,
-            suggestedNames: [],
-        };
-    }
-
-    handleInputChange = (inputText) => {
-        this.setState({
-            headerExpanded: !inputText,
-            suggestedNames: inputText ? name(inputText) : [],
-        });
+    const handleInputChange = (inputText) => {
+        setHeaderExpanded(!inputText);
+        setSuggestedNames(inputText ? name(inputText) : []);
     };
 
-    render() {
-        return (
-            <div>
-                <Header
-                    headerExpanded={this.state.headerExpanded}
-                    headTitle={this.state.headerText}
-                />
-                {<SearchBox onInputChage={this.handleInputChange} headerExpanded={this.state.headerExpanded}/>}       
-                {<ResultsContainer suggestedNames={this.state.suggestedNames} headerExpanded={this.state.headerExpanded}/>} 
-            </div>
+    return (
+        <div>
+            <Header headerExpanded={headerExpanded} headTitle={headerText} />
+            {<SearchBox onInputChage={handleInputChange} headerExpanded={headerExpanded} />}       
+            {<ResultsContainer suggestedNames={suggestedNames} headerExpanded={headerExpanded} />} 
+        </div>
             /* headerExpanded prop added in Searchbox and ResultsContainer for animation */
-        );
-    }
+        ); 
 }
 
 export default App;
