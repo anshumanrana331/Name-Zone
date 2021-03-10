@@ -1,4 +1,4 @@
 # Name Zone
 
-A very cooooooool react project for naming !!!
+A React app to get amazing names !
 
